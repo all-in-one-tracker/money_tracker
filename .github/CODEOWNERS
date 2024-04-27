@@ -1,0 +1,4 @@
+# CODEOWNERS file for money_tracker repository
+
+# Assigning gobikrish-s as the code owner for the entire repository
+* @gobikrish-s
