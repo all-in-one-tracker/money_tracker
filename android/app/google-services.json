@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "584426347598",
+    "project_id": "aiotracker-db",
+    "storage_bucket": "aiotracker-db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584426347598:android:c0b5d54b73d2a0e18df71f",
+        "android_client_info": {
+          "package_name": "com.example.money_tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "584426347598-mkv9rjmt6p388lh5c02fdicde83r3hot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu0MHn4sUpaRR-NaEPFvo0ad2rHI2q24c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "584426347598-mkv9rjmt6p388lh5c02fdicde83r3hot.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "584426347598-0b475d6ki08854bjmch7t0b85912kg69.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.aiotracker.ios"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
