@@ -77,8 +77,8 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
 
   void _handleGoogleSignIn() {
     try {
-      GoogleAuthProvider _googleAuthProvider = GoogleAuthProvider();
-      _auth.signInWithProvider(_googleAuthProvider);
+      GoogleAuthProvider googleAuthProvider = GoogleAuthProvider();
+      _auth.signInWithProvider(googleAuthProvider);
     } catch (error) {
       print(error);
     }
