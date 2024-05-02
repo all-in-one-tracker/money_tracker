@@ -67,4 +67,5 @@ class DefaultFirebaseOptions {
     iosClientId: '584426347598-cqria72bngkv0hqt8rcs8nfn19sdt9ls.apps.googleusercontent.com',
     iosBundleId: 'com.example.moneyTracker',
   );
+
 }

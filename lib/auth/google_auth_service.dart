@@ -1,33 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:money_tracker/auth/iauth_service.dart';
 
-class AuthenticationService {
-  AuthenticationService._privateConstructor();
-
-  static final AuthenticationService _instance =
-      AuthenticationService._privateConstructor();
-  factory AuthenticationService() {
-    return _instance;
-  }
-  void handleGoogleSignIn() {
-    _GoogleAuthenticationService().handleSignIn();
-  }
-
-  void handleGoogleSignOut() {
-    _GoogleAuthenticationService().handleSignOut();
-  }
-}
-
-class _GoogleAuthenticationService {
+class GoogleAuthenticationService implements IAuthenticationService {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
-  _GoogleAuthenticationService._privateConstructor();
+  GoogleAuthenticationService._privateConstructor();
 
-  static final _GoogleAuthenticationService _instance =
-      _GoogleAuthenticationService._privateConstructor();
-  factory _GoogleAuthenticationService() {
+  static final GoogleAuthenticationService _instance =
+      GoogleAuthenticationService._privateConstructor();
+  factory GoogleAuthenticationService() {
     return _instance;
   }
 
+  @override
   void handleSignIn() async {
     try {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
@@ -46,6 +31,7 @@ class _GoogleAuthenticationService {
     }
   }
 
+  @override
   void handleSignOut() async {
     await FirebaseAuth.instance.signOut();
     //need to sign out from Google as well in order to let user select the account while logging in again
