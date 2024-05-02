@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:money_tracker/Auth/authentication_service.dart';
+import 'package:money_tracker/auth/auth_controller.dart';
+import 'package:money_tracker/const/auth_types.dart';
 import 'package:sign_in_button/sign_in_button.dart';
 
 class AuthenticationPage extends StatefulWidget {
@@ -12,8 +13,6 @@ class AuthenticationPage extends StatefulWidget {
 
 class _AuthenticationPageState extends State<AuthenticationPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final AuthenticationService _authService = AuthenticationService();
-
   User? _user;
 
   @override
@@ -88,7 +87,7 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
         child: SignInButton(
           Buttons.google,
           text: "Sign In with Google",
-          onPressed: _authService.handleGoogleSignIn,
+          onPressed: () => _doSignIn(googleAuth),
         ),
       ),
     );
@@ -113,11 +112,17 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
           ),
           Text(_user!.email!),
           Text(_user!.displayName ?? ""),
-          ElevatedButton(
-              onPressed: _authService.handleGoogleSignOut,
-              child: const Text("Sign Out"))
+          ElevatedButton(onPressed: _doSignOut, child: const Text("Sign Out"))
         ],
       ),
     );
+  }
+
+  void _doSignIn(String authType) {
+    AuthenticationController().handleSignIn(authType);
+  }
+
+  void _doSignOut() {
+    AuthenticationController().handleSignOut();
   }
 }
